@@ -6,11 +6,28 @@ module Services
 		end
 
 		def get_departure(pilot)
-			return pilot["flightPlan"]["departureId"]
+			if (pilot["flightPlan"])
+				if pilot["flightPlan"]["departureId"]
+					return pilot["flightPlan"]["departureId"]
+				else
+					return "ZZZZ"
+				end
+			else
+				return "ZZZZ"
+			end
 		end
 
 		def get_arrival(pilot)
-			return pilot["flightPlan"]["arrivalId"]
+			if (pilot["flightPlan"])
+				if pilot["flightPlan"]["arrivalId"]
+					return pilot["flightPlan"]["arrivalId"]
+				else
+					return "ZZZZ"
+				end
+			else
+				return "ZZZZ"
+			end
+
 		end
 
 		def get_callsign(pilot)
