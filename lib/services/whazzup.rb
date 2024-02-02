@@ -27,7 +27,6 @@ module Services
 			else
 				return "ZZZZ"
 			end
-
 		end
 
 		def get_callsign(pilot)

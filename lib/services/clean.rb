@@ -19,7 +19,12 @@ module Services
 						logger.info "mazu sq: #{sq.code} s id #{sq.id} "
 					end
 				end
+
 				if  sq.paired && (!online_squawks.include? sq.code)
+					to_delete << sq
+				end
+
+				if sq.code == 2000 && !sq.flight_id
 					to_delete << sq
 				end
 			end
