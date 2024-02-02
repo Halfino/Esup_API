@@ -24,7 +24,7 @@ module Services
 					to_delete << sq
 				end
 
-				if sq.code == 2000 && !sq.flight_id
+				if !sq.flight_id && sq.paired
 					to_delete << sq
 				end
 			end
